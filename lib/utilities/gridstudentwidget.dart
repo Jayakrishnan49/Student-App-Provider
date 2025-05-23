@@ -12,7 +12,7 @@ class GridStudentWidget extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-          final studentController = Provider.of<StudentmanagmentControler>(context);
+    final studentController = Provider.of<StudentmanagmentControler>(context);
 
 
 return Consumer(

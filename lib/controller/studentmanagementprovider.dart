@@ -7,7 +7,7 @@ import 'package:student_app_provider/model/student%20details%20db/studentdetails
 
 
 class StudentmanagmentControler extends ChangeNotifier {
-    final Debouncer debouncer = Debouncer(delay: Duration(milliseconds: 1000));
+    final Debouncer debouncer = Debouncer(delay: Duration(milliseconds: 500));
     List<StudentModel> items = [];
   String searchItems = '';
   String selectedImagePath = '';
@@ -43,6 +43,7 @@ StudentmanagmentControler() {
     final userRecordData = Hive.box<StudentModel>('studentBox');
     userRecordData.putAt(index, value);
     items[index] = value;
+    selectedImagePath = '';
     notifyListeners();
   }
 
@@ -94,7 +95,6 @@ void searchStudents(String value){
 }
 
 /////  debounce
-
 class Debouncer {
   final Duration delay;
   VoidCallback? action;

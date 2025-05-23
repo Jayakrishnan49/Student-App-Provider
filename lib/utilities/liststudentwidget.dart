@@ -52,9 +52,9 @@ class ListStudentWidget extends StatelessWidget {
                       IconButton(
                         onPressed: () {
                           final orginalIndex=studentController.items.indexOf(item);
-                          if(orginalIndex!=1){
+                          // if(orginalIndex!=1){
                             Navigator.of(context).push(MaterialPageRoute(builder:(context) => EditStudentDetailScreen(student: item, index: orginalIndex)));
-                          }
+                          // }
                         },
                         icon: Icon(Icons.edit, color: AppColor.primary),
                       ),
@@ -65,9 +65,9 @@ class ListStudentWidget extends StatelessWidget {
         return CustomAlertDialog(titleText: 'Delete Student', contentText: 'Are you sure you want to delete this student?', buttonText1: 'yes', buttonText2: 'no',
         onPressButton1: () {
           final orginalIndex=studentController.items.indexOf(item);
-          if(orginalIndex!=1){
+          // if(orginalIndex!=1){
             studentController.deleteUserRecords(orginalIndex);
-          }
+          // }
         Navigator.pop(context);
        
                            }, onPressButton2: () { 
